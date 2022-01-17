@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Todos = () => {
+// FC stands for 'functional component', generic type.
+const Todos: React.FC<{customProps: string[]}> = (props) => {
   return (
     <ul>
-      <li>Learn React</li>
-      <li>Learn Typescript</li>
+      {props.customProps.map(customItem => <li key={customItem}>{customItem}</li>)}
     </ul>
   )
 }
